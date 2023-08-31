@@ -6,13 +6,12 @@ import VisuallyHidden from '../VisuallyHidden';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import styles from './Header.module.css';
 
-import { SoundEnabledContext } from '../SoundEnabledProvider';
+import { useSoundEnabled } from '../SoundEnabledProvider';
 
 function Header() {
   const id = React.useId();
 
-  const { soundEnabled, setSoundEnabled } =
-    React.useContext(SoundEnabledContext);
+  const { soundEnabled, setSoundEnabled } = useSoundEnabled();
 
   return (
     <header className={styles.wrapper}>
